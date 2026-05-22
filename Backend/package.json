@@ -1,0 +1,25 @@
+{
+  "name": "shopvibe-backend",
+  "version": "1.0.0",
+  "description": "Production-ready eCommerce backend for ShopVibe — Node.js, Express, Firebase",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "express",
+    "firebase",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.10.0"
+  }
+}
