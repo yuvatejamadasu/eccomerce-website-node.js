@@ -126,6 +126,9 @@ export const loginUser = async (email, password) => {
   // 3. Authenticate / generate token
   let token;
   if (process.env.NODE_ENV === 'development') {
+    if (password !== 'admin123') {
+      throw new ApiError(400, 'Invalid email or password');
+    }
     token = `dev-token-${userRecord.uid}`;
   } else {
     if (process.env.FIREBASE_API_KEY) {
