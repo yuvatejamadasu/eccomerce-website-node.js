@@ -26,7 +26,7 @@ app.use(cors({
   origin: [
     'http://localhost:5173',
     'https://eccomerce-website-node-js.vercel.app',
-    process.env.CLIENT_URL
+    process.env.CLIENT_URL ? process.env.CLIENT_URL.replace(/\/$/, '') : null
   ].filter(Boolean),
   credentials: true,
 }));

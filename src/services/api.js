@@ -1,4 +1,11 @@
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const getBaseUrl = () => {
+  let url = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+  if (url.endsWith('/')) url = url.slice(0, -1);
+  if (!url.endsWith('/api')) url += '/api';
+  return url;
+};
+
+const BASE_URL = getBaseUrl();
 
 /**
  * Fetch all products
@@ -76,7 +83,7 @@ export const fetchProductsByCategory = async (category) => {
 import axios from 'axios';
 
 // Base URL for the backend API (adjust if you run on a different host/port)
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE = getBaseUrl();
 
 // Helper to get stored token (if any)
 const getAuthHeader = () => {
